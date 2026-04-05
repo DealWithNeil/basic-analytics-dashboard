@@ -11,3 +11,5 @@ df['ORDERDATE'] = pd.to_datetime(df['ORDERDATE'])
 df['ADDRESSLINE2'] = df['ADDRESSLINE2'].fillna("N/A")
 
 df['STATE'] = df['STATE'].fillna("Unknown")
+
+df['TERRITORY'] = df['TERRITORY'].fillna("Unknown")
