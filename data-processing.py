@@ -20,3 +20,5 @@ IQR = Q3 - Q1
 df = df[(df['SALES'] >= Q1 - 1.5*IQR) & (df['SALES'] <= Q3 + 1.5*IQR)]
 
 df['REVENUE_PER_ITEM'] = df['SALES'] / df['QUANTITYORDERED']
+
+df.to_csv(r"C:\Users\Maranello Nacionales\analytics-dashboard\basic-analytics-dashboard\processed_sales_data.csv", index=False)
