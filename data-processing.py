@@ -5,3 +5,5 @@ df.head()
 
 print(df.info())
 print(df.isnull().sum())
+
+df['ORDERDATE'] = pd.to_datetime(df['ORDERDATE'])
