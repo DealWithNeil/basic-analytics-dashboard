@@ -7,3 +7,5 @@ print(df.info())
 print(df.isnull().sum())
 
 df['ORDERDATE'] = pd.to_datetime(df['ORDERDATE'])
+
+df['ADDRESSLINE2'] = df['ADDRESSLINE2'].fillna("N/A")
