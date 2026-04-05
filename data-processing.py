@@ -12,3 +12,9 @@ df['STATE'] = df['STATE'].fillna("Unknown")
 df['TERRITORY'] = df['TERRITORY'].fillna("Unknown")
 df['POSTALCODE'] = df['POSTALCODE'].fillna("00000")
 df['SALES_NORMALIZED'] = (df['SALES'] - df['SALES'].mean()) / df['SALES'].std()
+
+Q1 = df['SALES'].quantile(0.25)
+Q3 = df['SALES'].quantile(0.75)
+IQR = Q3 - Q1
+
+df = df[(df['SALES'] >= Q1 - 1.5*IQR) & (df['SALES'] <= Q3 + 1.5*IQR)]
